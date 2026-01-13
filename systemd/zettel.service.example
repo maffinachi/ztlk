@@ -1,0 +1,14 @@
+[Unit]
+Description=ZettelNet Server
+After=network.target
+
+[Service]
+Type=simple
+User=zettel
+WorkingDirectory=/home/zettel/project
+ExecStart=/home/zettel/project/bin/zettel_server 9009
+Restart=on-failure
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
